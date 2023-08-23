@@ -4,7 +4,7 @@ require "../../../bootstrap.php";
 
 if(isEmpty()) {
 
-    flash('message', 'Preencha todos os campos', 'success');
+    flash('message', 'Preencha todos os campos', 'danger');
 
     return redirect("contato");
     
@@ -16,6 +16,7 @@ $validate = validate([
     'subject' => 's',
     'message' => 's'
 ]);
+
 
 $data = [
     'quem' => $validate->email,
