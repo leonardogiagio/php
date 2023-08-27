@@ -33,10 +33,20 @@ class Post {
     public function aumentarLike() {
         $this->likes++;
     }
+
+
+    // metodo estatico
+    public static function somar($n1, $n2) {
+        return $n1 + $n2;
+    }
 }
 
 // criando objeto
 $post = new Post(10);
 $post->aumentarLike();
 $post->setAuthor('Leonardo');
-echo 'Esse post tem ' . $post->getLikes() . ' likes e o autor é o ' . $post->getAuthor();
+
+echo 'Esse post tem ' . $post->getLikes() . ' likes e o autor é o ' . $post->getAuthor() . PHP_EOL;
+
+// utilizando o metodo estatico
+echo 'Soma: ' . Post::somar(1, 2);
