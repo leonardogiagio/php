@@ -1,4 +1,4 @@
 <?php
 
-$pdo = new PDO("mysql:dbname=test;host=localhost;", 'root', '');
+$pdo = new PDO("mysql:dbname=blog;host=localhost;", 'root', '');
 
