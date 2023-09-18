@@ -17,7 +17,7 @@
             <td><?= $usuario['email'] ?></td>
             <td>
                 <a href="<?=$base?>/user/<?=$usuario['id']?>/update">[ EDITAR ]</a>
-                <a href="<?=$base?>/user/<?=$usuario['id']?>/delete">[ EXCLUIR ]</a>
+                <a href="<?=$base?>/user/<?=$usuario['id']?>/delete" onclick="return confirm('Deseja excluir')">[ EXCLUIR ]</a>
             </td>
         </tr>
     <?php } ?>
