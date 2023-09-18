@@ -1,3 +1,3 @@
 <?php $render('header'); ?>
 
-Opa, <?=$nome;?>
+<h2>Home</h2>

@@ -2,11 +2,12 @@
 namespace src\controllers;
 
 use \core\Controller;
+use \src\models\Test;
 
 class HomeController extends Controller {
 
     public function index() {
-        $this->render('home', ['nome' => 'Bonieky']);
+        $this->render('home');
     }
 
     public function sobre() {
@@ -17,4 +18,11 @@ class HomeController extends Controller {
         print_r($args);
     }
 
+    public function fotos() {
+        $this->render('fotos');
+    }
+
+    public function foto($param) {
+        echo 'Acessando a foto ' . $param['id'];
+    }
 }
