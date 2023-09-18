@@ -30,4 +30,33 @@ class UsersController extends Controller {
 
         $this->redirect('/novo');
     }
+
+    public function update($args) {
+        $usuario = User::select()->find($args['id']);
+
+        $this->render('update', [
+            'usuario' => $usuario
+        ]);
+    }
+
+    public function updateAction($args) {
+        $nome = filter_input(INPUT_POST, 'name');
+        $email = filter_input(INPUT_POST, 'email');
+
+        if ($nome && $email) {
+            User::update()
+                ->set('nome', $nome)
+                ->set('email', $email)
+                ->where('id', $args['id'])
+            ->execute();
+
+            $this->redirect('/');
+        }
+
+        $this->redirect('/user/'.$args['id'].'/update');
+    }
+
+    public function delete($args) {
+
+    }
 }
